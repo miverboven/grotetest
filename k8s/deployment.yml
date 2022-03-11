@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-weather
+spec:
+  selector:
+    matchLabels:
+      app: hello-weather
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-weather
+    spec:
+      containers:
+      - name: hello-weather
+        image: miverboven/grotetest:latest
+        ports:
+        - containerPort: 80
